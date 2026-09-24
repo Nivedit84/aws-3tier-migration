@@ -1,4 +1,4 @@
-Migration Execution Steps
+# Migration Execution Steps
 
 The migration will be executed in controlled phases, with the source
 environment remaining operational until the target environment has
