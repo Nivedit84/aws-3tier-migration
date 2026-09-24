@@ -110,6 +110,9 @@ The preferred approach is to provision the target instances using the existing i
 
 If an existing CI/CD or deployment mechanism is not available, the application can be deployed using approved application artifacts or validated AMIs from the source environment. The selected approach will preserve the application version, configuration and runtime dependencies of the source environment.
 
+Frontend and backend EC2 instances will be managed using Auto Scaling Groups distributed across multiple Availability Zones. The frontend
+ASG will be registered with the ALB target group, while the backend ASG will preserve the existing backend traffic and service-discovery mechanism.
+
 Frontend instances will be distributed across Availability Zones behind the ALB.
 
 The backend traffic model and service-discovery mechanism will initially be preserved from the source architecture. An internal ALB and independent backend scaling can be introduced as a future improvement.
